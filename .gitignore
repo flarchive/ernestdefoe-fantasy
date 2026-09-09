@@ -1,0 +1,9 @@
+# 🚨 `js/dist` is NOT ignored, and that is deliberate.
+#
+# A Flarum extension is installed by composer straight from this repository —
+# there is no build step on the target site — so the compiled bundle is part of
+# the package, not a build artefact. Ignoring it produced an extension that
+# installed cleanly, registered its routes, answered its API, and rendered a
+# blank page, because the JavaScript was simply not there.
+/js/node_modules
+/vendor
