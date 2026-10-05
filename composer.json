@@ -1,0 +1,38 @@
+{
+    "name": "ernestdefoe/fantasy",
+    "description": "A season-long fantasy league where members draft TEAMS rather than players. Snake draft, weekly lineups that lock at each team's own kickoff, head-to-head matchups, and a scoring system the commissioner sets. Plays whatever competition the Picks season is, and starts each league from that sport's own numbers.",
+    "type": "flarum-extension",
+    "keywords": ["flarum", "extension", "fantasy", "pickem", "college football", "nfl", "sports"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ernest Defoe",
+            "email": "ernestdefoe@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ernestdefoe/fantasy/issues",
+        "source": "https://github.com/ernestdefoe/fantasy"
+    },
+    "require": {
+        "php": "^8.3",
+        "flarum/core": "^2.0",
+        "ernestdefoe/picks": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ErnestDefoe\\Fantasy\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Fantasy",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-trophy",
+                "backgroundColor": "#b45309",
+                "color": "#fff"
+            }
+        }
+    }
+}
