@@ -2,13 +2,13 @@
 
 > **Read-only archive of released versions of ernestdefoe/fantasy.** Not for installation: use [Packagist](https://packagist.org/packages/ernestdefoe/fantasy) or the [upstream repository](https://github.com/ernestdefoe/fantasy).
 
-**1** versions archived · Latest: [`1.0.0`](https://github.com/flarchive/ernestdefoe-fantasy/tree/archive/v1.0.0) · License: `MIT` · Flarum: `^2.0`
+**0** versions archived · Latest: [`1.0.1`](https://github.com/flarchive/ernestdefoe-fantasy/tree/archive/v1.0.1) · License: `MIT` · Flarum: `^2.0`
 
 ## Archived Versions
 
 | Version | Released | Flarum | Source |
 |---|---|---|---|
-| `1.0.0` | 2026-09-09 | `^2.0` | [Browse](https://github.com/flarchive/ernestdefoe-fantasy/tree/archive/v1.0.0) |
+| — | — | — | — |
 
 Catalog entry: [packages/ernestdefoe-fantasy.json](https://github.com/flarchive/archive-index/blob/main/packages/ernestdefoe-fantasy.json)
 
