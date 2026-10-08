@@ -1,0 +1,56 @@
+ernestdefoe-fantasy:
+  admin:
+    permissions:
+      create_league: Start a fantasy league
+
+    settings:
+      nav_label: Name of the sidebar link
+      nav_label_help: What the link to Fantasy is called in the forum sidebar. Leave empty for "Fantasy".
+      max_franchises: Franchises per league
+      max_franchises_help: How many members a new league starts out allowing. A commissioner can change it for their own league.
+      roster_size: Teams on a roster
+      roster_size_help: How many teams each franchise drafts, by default.
+      starters: Teams in a lineup
+      starters_help: How many of those a franchise starts each week. Never more than the roster it is chosen from.
+
+  forum:
+    title: Fantasy
+    intro: Draft teams, start a few of them a week, and play somebody new every week.
+    empty: No leagues yet.
+    no_league: There is no league at this address.
+
+    franchise_count: "{count, plural, one {# franchise} other {# franchises}}"
+
+    start_league: Start a league
+    start_league_title: Start a fantasy league
+    league_name: League name
+    league_name_placeholder: What is it called?
+    league_description: What it is about
+    league_season: Season
+    league_season_none: No season yet
+    league_defaults: "New leagues start with {franchises} franchises, {roster} teams each and {starters} in a lineup. You can change all three once it exists."
+    create: Create
+    creating: Creating…
+    join: Take a franchise
+    joining: Joining…
+
+    standings: Standings
+    scoring: Scoring
+    franchise: Franchise
+    member: Member
+    wins: W
+    points: Points
+    roster: Roster
+
+    status:
+      setup: Taking members
+      drafting: Drafting
+      active: Playing
+      complete: Finished
+
+    rule:
+      points_per_point: For each point scored
+      points_per_point_allowed: For each point allowed
+      win_bonus: For a win
+      shutout_bonus: For a shutout
+      points_per_margin: For each point of the winning margin
