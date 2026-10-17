@@ -1,0 +1,290 @@
+// Fantasy.
+//
+// 🚨 Every colour is a Flarum variable, never a literal — this sits inside
+// whatever theme the site runs, and a hardcoded grey is the thing that looks
+// wrong on somebody else's dark mode.
+.FantasyPage {
+  padding: 24px 0 48px;
+
+  &-intro { color: var(--muted-color); margin: 4px 0 20px; }
+  &-empty { color: var(--muted-color); }
+}
+
+.FantasyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.FantasyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: var(--border-radius, 8px);
+  background: var(--body-bg);
+  border: 1px solid var(--control-bg);
+  color: var(--text-color);
+
+  &:hover { text-decoration: none; border-color: var(--primary-color); }
+
+  &-name { font-weight: 700; font-size: 16px; }
+  &-desc, &-meta { color: var(--muted-color); font-size: 13px; }
+
+  &-status {
+    align-self: flex-start;
+    font-size: 11px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--control-bg);
+    color: var(--muted-color);
+  }
+
+  // Only the state that is asking for something gets the accent. A badge on
+  // every card is a badge that says nothing.
+  &-status--drafting { background: var(--primary-color); color: var(--body-bg); }
+}
+
+.FantasyLeague-back { display: inline-block; margin-bottom: 12px; font-size: 13px; }
+.FantasySection { margin-top: 32px; h2 { font-size: 18px; margin: 0 0 10px; } }
+
+// 🚨 Scrolls inside its own container: the standings are six columns and the
+// page body must never scroll sideways on a phone.
+.FantasyTable-scroll { overflow-x: auto; }
+
+.FantasyTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  th {
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted-color);
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  td { padding: 8px 10px; border-top: 1px solid var(--control-bg); }
+
+  // Figures line up in columns, so they get tabular numerals.
+  &-num { text-align: right; font-variant-numeric: tabular-nums; }
+  &-name { font-weight: 600; }
+
+  &--rules td:first-child { color: var(--muted-color); }
+  &--rules { max-width: 460px; }
+}
+
+.FantasyRoster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+
+  &-crest { width: 22px; height: 22px; object-fit: contain; }
+  &-name { font-size: 12px; color: var(--muted-color); }
+}
+
+// What the visitor can do next, under the league's name.
+.FantasyActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 8px;
+
+  &-note { color: var(--muted-color); font-size: 13px; }
+}
+
+.FantasyStatus {
+  font-size: 11px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--control-bg);
+  color: var(--muted-color);
+
+  &--drafting { background: var(--primary-color); color: var(--body-bg); }
+}
+
+// ---------------------------------------------------------------- the draft room
+
+.FantasyDraft-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin: 8px 0 20px;
+  padding: 14px 16px;
+  border-radius: var(--border-radius, 8px);
+  border: 1px solid var(--control-bg);
+  background: var(--body-bg);
+
+  b { font-size: 16px; }
+  small { color: var(--muted-color); flex-basis: 100%; }
+
+  // It's your pick: the one moment on this page that is asking something of you.
+  &--mine { border-color: var(--primary-color); box-shadow: inset 4px 0 0 var(--primary-color); }
+  &--done { justify-content: space-between; }
+}
+
+.FantasyDraft-round { color: var(--muted-color); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+.FantasyDraft {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 860px) { grid-template-columns: minmax(0, 1fr); }
+}
+
+.FantasyDraft-search { margin-bottom: 10px; }
+
+// The order stays in view while the list of teams scrolls past it.
+@media (min-width: 861px) {
+  .FantasyDraft-side { position: sticky; top: calc(var(--header-height, 56px) + 16px); }
+}
+
+.FantasyDraft-teams, .FantasyDraft-order, .FantasyDraft-picks { list-style: none; margin: 0; padding: 0; }
+
+.FantasyDraft-team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px;
+  border-top: 1px solid var(--control-bg);
+  &:first-child { border-top: 0; }
+}
+
+.FantasyDraft-teamName, .FantasyDraft-orderName {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  small { color: var(--muted-color); font-size: 12px; }
+}
+
+.FantasyDraft-crest {
+  flex: none;
+  object-fit: contain;
+
+  &--none {
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--control-bg);
+    color: var(--muted-color);
+    font-weight: 700;
+    font-size: 12px;
+  }
+}
+
+.FantasyDraft-empty { color: var(--muted-color); }
+
+.FantasyDraft-side h2, .FantasyDraft-history h2 {
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted-color);
+  margin: 0 0 8px;
+}
+
+.FantasyDraft-order li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: var(--border-radius, 8px);
+
+  &.is-onClock { background: var(--control-bg); box-shadow: inset 3px 0 0 var(--primary-color); }
+}
+
+.FantasyDraft-count { color: var(--muted-color); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.FantasyDraft-history { margin-top: 24px; }
+
+.FantasyDraft-picks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 13px;
+
+  small { margin-left: auto; color: var(--muted-color); text-align: right; }
+}
+
+.FantasyDraft-pickNo { min-width: 34px; color: var(--muted-color); font-variant-numeric: tabular-nums; }
+.FantasyDraft-pickTeam { font-weight: 600; }
+
+// ---------------------------------------------------------------- the lineup
+
+.FantasyLineup-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 14px;
+}
+
+.FantasyLineup-week { width: auto; min-width: 160px; }
+
+.FantasyLineup-count {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-color);
+  &.is-over { color: var(--alert-error-color, #c0392b); font-weight: 600; }
+}
+
+.FantasyLineup {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 1px solid var(--control-bg);
+  border-radius: var(--border-radius, 8px);
+  &.is-loading { opacity: .5; }
+}
+
+.FantasyLineup-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--control-bg);
+  &:first-child { border-top: 0; }
+
+  &.is-starting { box-shadow: inset 3px 0 0 var(--primary-color); }
+
+  .Form-group, .Checkbox { margin: 0; }
+}
+
+.FantasyLineup-crest {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+
+  &--none {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--control-bg);
+    color: var(--muted-color);
+    font-weight: 700;
+  }
+}
+
+.FantasyLineup-team {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  small { color: var(--muted-color); font-size: 12px; }
+}
+
+.FantasyLineup-lock { color: var(--muted-color); }
