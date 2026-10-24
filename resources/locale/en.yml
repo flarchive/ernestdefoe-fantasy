@@ -1,0 +1,121 @@
+ernestdefoe-fantasy:
+  admin:
+    permissions:
+      create_league: Start a fantasy league
+
+    settings:
+      nav_label: Name of the sidebar link
+      nav_label_help: What the link to Fantasy is called in the forum sidebar. Leave empty for "Fantasy".
+      max_franchises: Franchises per league
+      max_franchises_help: How many members a new league allows. This is the default for leagues started from now on; it never changes a league that already exists.
+      roster_size: Teams on a roster
+      roster_size_help: How many teams each franchise drafts in a new league.
+      starters: Teams in a lineup
+      starters_help: How many of those a franchise starts each week in a new league. Never more than the roster it is chosen from.
+
+  forum:
+    title: Fantasy
+    intro: Draft teams, start a few of them a week, and play somebody new every week.
+    empty: No leagues yet.
+    no_league: There is no league at this address.
+
+    franchise_count: "{count, plural, one {# franchise} other {# franchises}}"
+
+    start_league: Start a league
+    start_league_title: Start a fantasy league
+    league_name: League name
+    league_name_placeholder: What is it called?
+    league_description: What it is about
+    league_season: Season
+    league_season_none: No season yet
+    league_defaults: "New leagues start with {franchises} franchises, {roster} teams each and {starters} in a lineup. These are the forum's settings and stay fixed once the league exists."
+    create: Create
+    creating: Creating…
+    join: Take a franchise
+    joining: Joining…
+    join_title: "Join {league}"
+    franchise_name: Your franchise's name
+    franchise_name_placeholder: What will you call it?
+    log_in_to_join: Log in to join
+    places: "{taken} of {max} places taken"
+    start_draft: Start the draft
+    start_draft_needs_two: A draft needs at least two franchises.
+    start_draft_confirm: Start the draft now? Nobody else can join once it starts, and the draft order is shuffled.
+    draft_room: Go to the draft
+    set_lineup: Set your lineup
+
+    draft:
+      title: "{league} draft"
+      not_started: The draft hasn't started yet.
+      done: The draft is done. Every franchise has its teams.
+      round_pick: "Round {round}, pick {pick} · #{overall} overall"
+      on_the_clock: "{franchise} is on the clock"
+      your_pick: You're on the clock. Pick a team.
+      picking_for: "As commissioner, you can pick for {franchise}."
+      search: Find a team or conference
+      pick: Draft
+      no_match: No available team matches that.
+      none_left: Every team has been drafted.
+      order: Draft order
+      picks: Picks so far
+
+    lineup:
+      title: "{franchise}: lineup"
+      not_yet: Lineups open once the draft is done.
+      week: Week
+      count: "{count} of {starters} starting"
+      empty: Your roster is empty.
+      help: "Start up to {starters} teams. A team locks when its game kicks off. If you don't change anything, last week's lineup plays."
+      save: Save lineup
+      saved: Lineup saved.
+      starting: Starting
+      bench: Bench
+      locked: Its game has kicked off
+      bye: No game this week
+      vs: "vs {team}"
+      at: "at {team}"
+      final: "Final {for}–{against}"
+      live: In progress
+      before_draft: played before the draft, so it doesn't count
+
+    standings: Standings
+    scoring: Scoring
+    franchise: Franchise
+    member: Member
+    wins: W
+    points: Points
+    roster: Roster
+
+    status:
+      setup: Taking members
+      drafting: Drafting
+      active: Playing
+      complete: Finished
+
+    rule:
+      points_per_point: For each point scored
+      points_per_point_allowed: For each point allowed
+      win_bonus: For a win
+      shutout_bonus: For a shutout
+      points_per_margin: For each point of the winning margin
+
+  api:
+    name_required: A league needs a name.
+    name_too_long: That name is too long.
+    league_not_found: There is no league at that address.
+    league_started: That league has already started.
+    league_full: That league is full.
+    default_franchise: "{name}'s team"
+    not_commissioner: Only the league's commissioner can do that.
+    too_few_franchises: A draft needs at least two franchises.
+    not_drafting: This league isn't drafting.
+    not_your_turn: It isn't your pick.
+    no_such_team: That team doesn't play in this league's season.
+    roster_full: That roster is full.
+    already_taken: Someone has already drafted that team.
+    not_in_league: You don't have a franchise in this league.
+    not_active: Lineups open once the draft is done.
+    no_such_week: That week isn't part of this league's season.
+    not_on_roster: You can only start teams on your roster.
+    too_many_starters: That's more starters than this league allows.
+    locked: A team whose game has kicked off can't be moved in or out of the lineup.
